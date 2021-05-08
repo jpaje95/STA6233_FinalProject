@@ -1,0 +1,42 @@
+Title,ESRB,Genre,Playstation,Xbox,PC,Nintendo Switch,Critic_1,Critic_2,Critic_3,Critic_A,T_Streamers,T_Viewers,Avg_Players,Multiplayer
+Mario Kart 8,E,Racing,No,No,No,Yes,88,93,70,83.66666667,3731,6640,.,PvP
+Forza Horizon 4,E,Racing,No,Yes,Yes,No,92,92,96,93.33333333,4686,1628,1246,PvP
+Crash Team Racing Nitro Fueled,E10+,Racing,Yes,Yes,No,Yes,83,82,83,82.66666667,534,61,.,PvP
+NBA 2K21,E,Sports,Yes,Yes,Yes,Yes,79,60,68,69,20161,7082,11909,Solo
+Tekken 7,T,Fighting,Yes,Yes,Yes,Yes,82,82,95,86.33333333,2768,1433,3824,PvP
+Street Fighter V,T,Fighting,Yes,No,Yes,No,77,75,90,80.66666667,2463,2512,2324,PvP
+Mortal Kombat 11,M,Fighting,Yes,Yes,Yes,Yes,82,82,90,84.66666667,4929,1940,2675,PvP
+Mass Effect 3,M,Action,Yes,Yes,Yes,Yes,89,95,93,92.33333333,179,53,111,Solo
+Pokemon Sword and Shield,E,Turn Based Strategy,No,No,No,Yes,80,80,93,84.33333333,5512,5375,49887,PvP
+Overcooked 2,E,Cooking Simulation,Yes,Yes,Yes,Yes,81,82,85,82.66666667,1171,260,1224,"Co-Op, PvE"
+Animal Crossing New Horizons,E,Simulation/Sandbox,No,No,No,Yes,90,90,90,90,4957,3582,.,Solo
+Nier Automata,M,Action-Adventure,Yes,Yes,Yes,No,88,89,89,88.66666667,1444,375,1270,Solo
+Final Fantasy VII Remake,T,Action-Adventure,Yes,Yes,Yes,Yes,87,88,80,85,1965,351,.,Solo
+Outriders,M,Third Person RPG Shooter,Yes,Yes,Yes,No,74,75,70,73,10986,4379,44742,"Co-Op, Team Battle"
+The Witcher 3,M,Action-Adventure,Yes,Yes,Yes,No,93,100,93,95.33333333,2770,984,18669,Solo
+Breath of the Wild,E10+,Open World Action-Adventure,No,No,No,Yes,97,96,100,97.66666667,3240,2219,.,Solo
+Valorant,T,Battle,No,No,Yes,No,80,81,90,83.66666667,132567,126699,.,Team Battle
+Super Smash Bros Ultimate,E10+,Fighting,No,No,No,Yes,93,92,94,93,6531,3200,.,"PvP, Team Battle"
+Red Dead Redemption 2,M,Open World Action-Adventure,Yes,Yes,Yes,No,97,96,94,95.66666667,6260,1850,12336,Solo
+FIFA 21,E,Sports,Yes,Yes,Yes,Yes,72,73,70,71.66666667,36762,48772,13644,PvP
+Sims 4,T,Simulation/Sandbox,Yes,Yes,Yes,No,70,70,75,71.66666667,5831,2623,10344,Solo
+Valheim,T,Survival,No,No,Yes,No,90,100,95,95,8426,2948,37976,PvE
+Minecraft,E10+,Sandbox,Yes,Yes,Yes,No,93,80,90,87.66666667,142079,100528,.,"PvP, Co-Op"
+Genshin Impact,T,Action-Adventure RPG,Yes,Yes,Yes,Yes,84,84,90,86,24226,16818,30901446,"Co-Op, PvE"
+Player Unknown's Battlegrounds,T,Battle Arena,Yes,Yes,Yes,No,86,77,95,86,15572,17364,186881,Team Battle
+Overwatch,T,Battle Arena,Yes,Yes,Yes,Yes,91,91,78,86.66666667,30903,16079,6580000,Team Battle
+Tom Clancy's Rainbow Six Siege,M,Battle Arena,Yes,Yes,Yes,No,79,88,85,84,43222,23905,77717,Team Battle
+Stardew Valley,E10+,Simulation/Sandbox,Yes,Yes,Yes,Yes,89,90,95,91.33333333,9518,2175,27168,Solo
+Rocket League,E,Sports,Yes,Yes,Yes,Yes,86,93,90,89.66666667,82567,34699,53375,PvP
+GTA V,M,Action-Adventure,Yes,Yes,Yes,No,97,96,86,93,76392,356991,92492,Solo
+World of Warcraft,T,Battle Arena,No,No,Yes,No,93,80,70,81,29198,37109,5375908,"PvP, Team Battle"
+League of Legends,T,Battle Arena,No,No,Yes,No,78,54,85,72.33333333,110452,204383,110000000,"PvP, Team Battle"
+Apex Legends,T,Battle Arena,Yes,Yes,Yes,Yes,89,81,90,86.66666667,122197,67814,125513,"PvP, Team Battle"
+Call of Duty: Modern Warfare,M,Battle Arena,Yes,Yes,Yes,No,80,80,81,80.33333333,129143,14027,10039048,"PvP, Team Battle"
+Fortnite,T,Battle Arena,Yes,Yes,Yes,Yes,81,84,96,87,209606,142955,350000000,"PvP, Team Battle"
+Resident Evil 6,M,Survival/Horror,Yes,No,No,No,60,79,57,65.33333333,1336,632,791,Solo
+Outlast,M,Survival/Horror,Yes,Yes,Yes,Yes,78,76,78,77.33333333,3011,691,.,Solo
+The Last of US,M,Survival/Horror,Yes,No,No,No,98,90,100,96,1087,302,.,Solo
+Civilization VI,E10+,Turn Based Strategy,Yes,Yes,Yes,Yes,89,93,88,90,1082,1314,35094,PvP
+Warframe,M,Third Person RPG Shooter,Yes,Yes,Yes,Yes,69,75,86,76.66666667,4620,1843,39914,"PvP, Team Battle"
+Fire Emblem,T,"Turn Based Strategy, RPG",No,No,No,Yes,89,88,70,82.33333333,112,56,,PvP
