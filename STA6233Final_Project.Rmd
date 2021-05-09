@@ -5,8 +5,6 @@ output:
   html_document:
     toc: true
     toc_float: true
-    toc_collapsed: true
-    toc depth: 1
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -14,6 +12,8 @@ packs <- c("tidyr", "gridExtra", "dplyr", "plyr", "stringr", "data.table", "ggpl
 for (p in packs) library(p, character.only = T)
 rm(packs, p)
 data<-read.csv("https://raw.githubusercontent.com/jpaje95/STA6233_FinalProject/main/stats1.csv")
+library(shiny)
+library(markdown)
 
 cr <- list(
   title = "Critic Ratings",
