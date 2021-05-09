@@ -1,0 +1,1025 @@
+---
+title: "Video Game Recomendations"
+author: "Jasmine Paje | STA6233 Final Project"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc depth: 1
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+packs <- c("tidyr", "gridExtra", "dplyr", "plyr", "stringr", "data.table", "ggplot2", "scales", "plotly", "gganimate", "shiny")
+for (p in packs) library(p, character.only = T)
+rm(packs, p)
+data<-read.csv("https://raw.githubusercontent.com/jpaje95/STA6233_FinalProject/main/stats1.csv")
+
+cr <- list(
+  title = "Critic Ratings",
+  showticklabels = FALSE,
+  showgrid = FALSE)
+```
+## Looking for a new game to play? 
+With the increasingly rapid growth of technology, the video game industry has been on the rise with both additions to classic series and also new franchises for players of all skill level and experience to enjoy. Organized by genre and style of gameplay, below are some of the most popular video games of this generation. Please feel free to click around and see what kind of games might be up your alley! 
+
+# Racing {.tabset .tabset-fade}
+
+## **Mario Kart 8**
+![](https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_MarioKart8_image1600w.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Mario Kart 8 is a popular racing game published by Nintendo. The game allows up to eight players in a friendly competition that tests each player’s racing skills. It follows the classic Mario Kart gameplay from the series where players control Mario franchise characters in kart racing, collecting a variety of items to hinder opponents, and gain advantages in the race. 
+
+```{r mariokartsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 1
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Nostalgia, a new addition to a classic series in Mario Universe
+- Features characters from other Nintendo franchises (Link, Animal Crossing, etc.)
+- Unique gameplay and customizeable racers
+- Smooth graphics and controls
+- Cute, whimsical race tracks and beautiful game art
+
+#### Statistics
+```{r mariokartstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Mario Kart 7](https://www.nintendo.com/games/detail/mario-kart-7-3ds/)
+
+[Team Sonic Racing](https://www.sonicthehedgehog.com/teamsonicracing)
+
+[Crash Team Racing Nitro Fueled](https://www.crashbandicoot.com/crashteamracing)    
+
+## **Forza Horizon 4**
+![](https://compass-ssl.xbox.com/assets/6a/31/6a31393d-b0cc-4833-8e82-fd3a2c6b6e19.jpg?n=FH4_GLP-Page-Hero-1084_1920x1080_02.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Forza Horizon 4 is an exciting open world racing game. The game’s universe is inspired by a fictionalized version of Great Britain, and represents areas like Edinburgh, Ambleside, and Bamburgh, to name a few. Forza Horizon 4 has beautiful graphics to enjoy as you race either online competitively or completely solo.  
+
+```{r forzasum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 2
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Open world mechanics, which is unique for a racing game
+- Plenty of customizable content, including route creator
+- Beautiful graphics
+- Weekly in game updates that change the seasons within the gameplay
+- Multiplayer features servers that host up to 72 players at a time
+
+
+#### Statistics
+```{r forzastats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also   
+[Need for Speed](https://www.ea.com/games/need-for-speed/need-for-speed-heat)
+
+[Gran Turismo Sport](https://www.gran-turismo.com/us/products/gtsport/)
+
+[Asphalt 9](https://www.gran-turismo.com/us/products/gtsport/)
+
+***
+
+## **Crash Team Racing Nitro Fueled**
+![](https://cloudfront.first4figures.com/media/resized/l-890-369/blog/1/CTR_Nitro_Fueled_Cover_3.png)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Follow the story of the popular Crash Bandicoot as he once again saves the world, this time through racing against an evil alien set on taking over the universe. Crash Team Racing Nitro Fueled is a new and improved  remake of the first CTR on PS1. Each player controls characters from the Crash Bandicoot universe including Crash, Coco, and Crunch to race against each other. Players have the ability to collect items for power ups and to slow down opponents to win as they race through multiple colorful tracks. 
+
+```{r crashsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 3
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Nostalgic for people who grew up with the Crash Bandicoot series
+- Whimsical tracks and great graphics
+- Unique driving controls for a racing game
+- Weekly shop updates for customizable items
+- Beautiful remake of the original 1999 game
+
+#### Statistics
+```{r crashstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Mario Kart 8](https://mariokart8.nintendo.com/)
+
+[Crash Bandicoot N. Sane Trilogy](https://store.playstation.com/en-us/product/UP0002-CUSA07402_00-CRASHNSANETRLOGY)
+
+[Crash Bandicoot 4: It's About Time](https://www.crashbandicoot.com/crash4)
+
+# Fighting {.tabset .tabset-fade}
+
+## **Tekken 7**
+![](https://thisgengaming.com/wp-content/uploads/2017/10/Tekken-7-title.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Tekken 7 is a continuation of the Tekken series that follows the story lines of the many characters available to play as. It contains a one-on-one combat system with the cast from the Tekken universe, including the classics like Jin Kazama, Ling Xiaoyu, and Heihachi Mishima. The various displays of martial art styles can be played through both complex and simple combos that are used to defeat opponents either in arcade mode or  local and online co-op.
+
+```{r tekkensum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 5
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Unique martial arts styles and gameplay for each character
+- Contains downloadable content featuring characters outside of the Tekken universe, such as Noctis Lucis Caelum and Tifa Lockhart from the Final Fantasy series.
+- Beautiful graphics and settings true to real life places
+- Engaging storylines that continue from previous games in the series
+- Customizable characters
+
+#### Statistics
+```{r tekkenstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Tekken Tag Tournament 2](https://en.wikipedia.org/wiki/Tekken_Tag_Tournament_2)
+
+[Tekken 6](https://en.wikipedia.org/wiki/Tekken_6)
+
+[Tekken X Street Fighter](https://en.wikipedia.org/wiki/Tekken_X_Street_Fighter)
+
+## **Super Smash Bros Ultimate**
+![](https://www.smashbros.com/assets_v2/img/movie/20180613_1.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Super Smash Bros Ultimate is a fighting game that contains characters from the Nintendo Universe along with third party franchises. This level of diversity attracts a wide range of players of either experienced gamers or leisure players alike. Players have the option to fight against or with others and can brawl with up to eight people and experience the thrill of their favorite games and characters being seen in one universe. 
+
+```{r ssbsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 18
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Huge storyline; roster contains many fan favorites from all sorts of Nintendo classics
+- Unique fighting styles for each character
+- Highly anticipated story mode that continues from previous Super Smash games
+- Lots of competitive gameplay in the community
+- Accomodates to players of all skill levels
+
+#### Statistics
+```{r ssbstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Super Smash Bros Brawl](https://en.wikipedia.org/wiki/Super_Smash_Bros._Brawl)
+
+[Super Smash Bros Melee](https://en.wikipedia.org/wiki/Super_Smash_Bros._Melee)
+
+***
+## **Street Fighter V**
+![](https://cdn1.dotesports.com/wp-content/uploads/2018/08/08161837/f99bf0ea-1bbb-44b6-8014-5e5d28718679-1024x576.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Street Fighter V is an addition to the Street Fighter universe that takes place between IV and III. Street Fighter V follows Charlie Nash as he’s instructed to retrieve an item from an old friend that will help him destroy Bison. The game contains one on one combat as the story progresses and carries on the same 2D fighting style as its predecessors.
+
+```{r sfsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 6
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Easy gameplay, great for beginners
+- Great for local PvP multiplayer 
+- Nostalgic for anyone following the Street Fighter series
+- Improved graphics from its predecessors 
+- Complex character storylines
+
+#### Statistics
+```{r sfstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Street Fighter IV](https://en.wikipedia.org/wiki/Street_Fighter_IV)
+
+[Street Fighter x Tekken](https://en.wikipedia.org/wiki/Street_Fighter_X_Tekken)
+
+[Mortal Kombat](https://www.mortalkombat.com/)
+
+# Multiplayer (Co-Op) Action {.tabset .tabset-fade}
+
+## **Genshin Impact**
+![](https://image.api.playstation.com/vulcan/ap/rnd/202008/0611/VdFDkKKhAXpyw5NLBgfQSaW9.jpg?w=1920&thumb=false)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Genshin Impact is a free-to-play open world game developed and published by Mihoyo. The game is action-based and explores the use of elements through various battles against monsters, machines, and humans alike. Genshin Impact explores the world of Teyvat as one otherworldly traveler is in search for their missing twin. Players can build unstoppable teams of four, interact with non-playable characters, complete mission objectives, and follow the story lines of different characters.
+
+```{r genshinsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 24
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Engaging main storyline that is constantly being released with game updates
+- Never ending supply of missions and goals to work for
+- Gacha system for obtatining rare characters and weapons
+- Huge community of active players for co-op
+- Build characters and teams to fit your own gamepaly style
+
+#### Statistics
+```{r genshinstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[The Legend of Zelda: Breath of the Wild](https://www.nintendo.com/games/detail/the-legend-of-zelda-breath-of-the-wild-switch/)
+
+[Honkai Impact](https://honkaiimpact3.mihoyo.com/)
+
+[Imortals Fenyx Rising](https://www.phxrisingfc.com/)
+
+## **Warframe**
+![](https://n9e5v4d8.ssl.hwcdn.net/images/longlanding/warframe-metacard.png)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+ Warframe is a free-to-play role playing shooter game that was developed and published by Digital Extremes. The game follows the members of an ancient warrior race far into the Earth’s future and is a mix of shooting and melee combat to allow players to enhance their warrior with improved armor. Warframe allows players to complete missions across the solar system either solo or with a team of four. 
+
+```{r warframehsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 40
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Hundreds of hours of content
+- Incredibly unique movement and combat system
+- Beautiful environment and character design
+- Respectful community and developers
+
+#### Statistics
+```{r warframestats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Mass Effect](https://www.ea.com/games/mass-effect/mass-effect-legendary-edition)
+
+[Destiny 2](https://www.bungie.net/7/en/Destiny/NewLight)
+
+[Outriders](https://outriders.square-enix-games.com/)
+
+## **Outriders**
+![](https://attackofthefanboy.com/wp-content/uploads/2021/04/Outriders-6.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Outriders is a third person role playing game developed by People Can Fly and published by Square Enix. Players create their custom character from four different classes that each contain a different set of skills used to defeat enemies. The player assumes role of a genetically modified soldier to save humanity as they explore an alien planet. Outriders allows the player to interact with characters, complete missions, and engage in battles to raise world level and difficulty.
+
+```{r outridershsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 14
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+
+#### What makes this game popular?
+- Great gameplay for co-op with friends
+- Graphics and animations are entertaining
+- Interesting environments and monsters
+- Customizable characters and loot drops that keep players interested
+
+#### Statistics
+```{r outridersstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Player Unknown's Battlegrounds](https://www.pubg.com/)
+
+[Tom Clancy's Rainbow Six Siege](https://www.ubisoft.com/en-us/game/rainbow-six/siege) 
+
+[Counter-Strike: Global Offensive](https://blog.counter-strike.net/)
+
+# Single Player Action-Adventure {.tabset .tabset-fade}
+
+## **Legend of Zelda: Breath of the Wild**
+![](https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2021050516)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Breath of the Wild follows the story of the legendary hero of Hyrule, Link, as he rescues Zelda from a post apocalyptic Hyrule. Explore the open world game and fight fantastical creatures as you uncover the past as you investigate the present, and become enamoured by the whimsical atmosphere of Hyrule. It’s completely open world universe that gives the player freedom to explore the massive one-room world, participate in mini games, complete side missions, and enhance weapon and armor. 
+
+```{r botwsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 16
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Deviates from the usual linear style that the classic Zelda series has seen for decades into an engaging open world experience
+- Beautiful graphics, story, and gameplay 
+- Very engaging story and beautiful delivery of the narrative
+- Simple but great combat system for players of all skill level
+
+#### Statistics
+```{r botwstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Legend of Zelda: Age of Calamity](https://www.zelda.com/hyrule-warriors/)
+
+[Legend of Zelda: Twilight Princess](https://www.nintendo.com/games/detail/the-legend-of-zelda-twilight-princess-hd-digital-version-wii-u/)
+
+[Legend of Zelda: Skyward Sword](https://www.nintendo.com/games/detail/the-legend-of-zelda-skyward-sword-hd-switch/)
+
+## **Final Fantasy VII Remake**
+![](https://www.keengamer.com/wp-content/uploads/2020/03/3532489-final-fantasy-7-remake.jpg.webp)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+The Final Fantasy 7 remake is a rendition of the classic FFVII on PS1. The game follows MC Cloud Strife, a mercenary who is trying to save the world from a eco-terrorist megacorporation. Players get to watch Cloud as he joins forces with many others to defeat the antagonizing Shinra Electric Power Company and Sephiroth.  It incorporates new combat system similar to the latest edition of the final fantasy series, Final Fantasy XV. 
+
+```{r ffviisum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 13
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Absolutely stunning graphics
+- Beautiful rendition of the classic original FFVII; watch your favorite story with modern graphics
+- Great combat system
+- Engaging story in the Final Fantasy universe featuring one of the most popular main protagonists of the series
+
+#### Statistics
+```{r ffviistats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Final Fantasy XV](https://finalfantasyxv.square-enix-games.com/)
+
+[Final Fantasy XIII](https://square-enix-games.com/en_EU/games/final-fantasy-xiii)
+ 
+[Kingdom Hearts III](https://www.kingdomhearts.com/3/us/home/)
+
+## **Nier: Automata**
+![](https://i.stack.imgur.com/UAoh2.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Nier Automata is a post apocalyptic action game that mainly follows the story of two androids as they try to eliminate evil extraterrestrial machines on Earth. It revolves around two agents of Yorha: 2B and 9S as they explore what remains of Earth and how they can save it from the malevolent, invasive machinery.  Its story goes far beyond an alien takeover and explores the surprisingly human emotions of robots.
+
+```{r niersum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 12
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Beautiful combat system
+- Heart wrenching story with many different outcomes based on your choices; the setting of the game gives the story a unique experience
+- Stunning graphics and game art
+- Open world style gameplay with many different side missions to complete
+- Aside from the game, there are books available to further understand the complex story and lore from this expansive universe
+
+#### Statistics
+```{r nierstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Nier Replicant](https://nier.square-enix-games.com/en-us/)
+
+[Nier](https://en.wikipedia.org/wiki/Nier_(video_game))
+
+[Final Fantasy XII](https://square-enix-games.com/en_EU/games/final-fantasy-xii-the-zodiac-age)
+
+## **The Witcher 3: Wild Hunt**
+![](https://i.ytimg.com/vi/qcbds6KrA4k/maxresdefault.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+The Witcher 3 follows the story of Geralt, a monster hunter who hails from the fictional kingdom of Rivia. In search of a missing woman, Geralt explores the fantasy world and encounters several fantastical creatures along the way. It is set in a medieval times where the fight against fictional monsters determines the player’s  survival, and has a melee-style combat using a mix of swords and complex alchemy.
+
+```{r witchersum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 15
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Hundreds of hours of potential gameplay
+- Fluid movement mechanics
+- Amazing storyline, extended into a Netflix series as well
+- Huge open world with hundreds of lovable characters to follow the stories of
+- One of the most popular and well loved video games of this style/genre
+
+#### Statistics
+```{r wticherstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Horizon Zero Dawn](https://www.playstation.com/en-us/games/horizon-zero-dawn/)
+
+[Cyperpunk 2077](https://www.cyberpunk.net/us/en/)
+
+[Dragon Age: Inquisition](https://www.ea.com/games/dragon-age/dragon-age-inquisition)
+
+## **Red Dead Redemption 2**
+![](https://news.xbox.com/en-us/wp-content/uploads/sites/2/2020/04/RDR_XBOX_1920X1080-WIRE.jpg?w=1776)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Red Dead Redemption 2 tells the story set in a fictionalized Wild-West universe in 1899. The story follows MC Arthur Morgan, a member of an outlaw gang as he deals with the decline of the Wild-West, survive government forces, and deal with rivals and other adversaries. Explore the open world to complete mission objectives, interact with characters, and engage in thrilling shootouts. 
+
+```{r rddhsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 19
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Great story told in a unique setting
+- Beautiful game art and engagaing gameplay add to the wonderful story telling of the game
+- One of the most intricately handcrafted games of this generation
+- Many hidden easter eggs that add to the experience
+- Realistic aspects of the gameplay such as hunting and abundance of characters to interact with
+
+#### Statistics
+```{r rddstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Fallout 4](https://store.steampowered.com/app/377160/Fallout_4/)
+
+[Red Dead Redemption](https://www.rockstargames.com/reddeadredemption/)
+
+[Ghost of Tsushima](https://www.playstation.com/en-us/games/ghost-of-tsushima/)
+
+# Strategy {.tabset .tabset-fade}
+
+## **Pokemon Sword & Shield**
+![](https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/p/pokemon-sword-and-pokemon-shield-double-pack-switch/hero?v=2021050421)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+In Pokemon Sword and Shield, the player assumes the role of a pokemon trainer fighting  to become world champion. It’s set in the Galar Region of this universe and is a hearty mix of open world and linear gameplay. The player has the ability to interact far more with their Pokemon and raise friendships with the lovely creatures as they grow and expand their party and strength. 
+
+```{r swshsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 9
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- A beautiful addition to the classic Pokemon series with improved graphics and gameplay
+- More focused on the story and development of your team and character instead of the grind-heavy gameplay in previous games
+- Customization of player's characters and team
+- You can spend time with your Pokemon on a very personal level, which I think is something fans have wanted for a long time: You can cook and camp with other players with a third person view. 
+
+#### Statistics
+```{r swshstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Pokemon Series](https://www.pokemon.com/us/pokemon-video-games/all-pokemon-games/)
+
+[Super Smash Bros. Ultimate](https://www.smashbros.com/en_US/)
+
+[Pokemon Tournament](https://www.nintendo.com/games/detail/pokken-tournament-dx-switch/)
+
+## **Civilization VI**
+![](https://i.pinimg.com/originals/c0/dc/cb/c0dccbb834411ca28ed6ef0cb23186b2.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Sid Meier’s Civilization VI, or Civ6 for short, is a turn based strategy game of the Civilization series. The goal of the game is for the player to develop a civilization and grow to become a world power, and players can achieve this through military domination, technological advancements, and cultural influence. One or more players compete alongside computerized opponents to control the planet across generations and several millennia. 
+
+```{r civsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 39 
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- The premise of the game is unique and it’s considered “the ultimate digital board game” according to critics from PC Gamer
+- The game gives plenty of freedom in a world where you create your own civilization, which is an incredibly ambitious objective
+- Offers new ways to interact with your world compared to its predecessors 
+- Also new civilizations not featured in previous games
+
+#### Statistics
+```{r civstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Civilization V](https://store.steampowered.com/app/8930/Sid_Meiers_Civilization_V/)
+
+[Civilization Series](https://en.wikipedia.org/wiki/Civilization_(series))
+
+[Plague Inc.](https://www.ndemiccreations.com/en/22-plague-inc)
+
+## **Fire Emblem: Three Houses**
+![](https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/f/fire-emblem-three-houses-switch/fire-emblem-three-houses-hero?v=2021050421)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Fire Emblem: Three Houses is a tactical role playing game that is turn based, developed by Intelligent Systems and Koei Tecmo. Three Houses is set on a fictional continent that is divided by three ruling superiors currently at peace. The game follows Byleth, a character who was a former mercenary and an academy’s newest professor. The player chooses a class to lead and guides their students through various battles. Players move across a grid as they fight and move across the board using passive abilities, character buffs, and perform special moves called Gambits to win. 
+
+```{r fireemblemsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 41
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Characters have deep, engaging backstories that make them lovable
+- Fairly easy gameplay, but more difficult levels can be quite challenging
+- Great replayability that keeps players returning
+- Nice graphics compared to its predecessors
+
+#### Statistics
+```{r fireemblemstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Super Smash Bros. Ultimate](https://www.smashbros.com/en_US/)
+
+[Fire Emblem Series](https://en.wikipedia.org/wiki/List_of_Fire_Emblem_video_games)
+
+***
+
+# Battle Arena {.tabset .tabset-fade}
+
+## **Overwatch**
+![](https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/share.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Overwatch is a team-based multiplayer first person shooter game that encourages teams to work to complete map specific objectives within a limited time. The game allows you to participate in an offline solo option to practice, friendly online competition with friends, or brutal ranked competition as you compete against legendary players all across the world. The Overwatch universe provides multiple characters to use that possess a variety of abilities ranging from attack, defense, and healing. Players participate in two teams of six and choose from the thirty two playable characters. 
+
+```{r overwatchsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 26
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Beautiful graphics with very colorful settings and uniquely designed characters
+- Smooth gameplay and unique movesets per character
+- The fast paced combat system relies on strategy and teamwork, not just mindless gunblazing, which has attracted many non-FPS players
+- Huge community which makes multiplayer online fun
+
+#### Statistics
+```{r overwatchstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Fortnite](https://www.epicgames.com/fortnite/en-US/home)
+
+[Paladins](https://www.paladins.com/)
+
+[League of Legends](https://na.leagueoflegends.com/en-us/)
+
+## **Apex Legends**
+![](https://media.contentapi.ea.com/content/dam/apex-legends/common/legacy/apex-featured-image-legacy-season.jpg.adapt.crop191x100.1200w.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Apex Legends is a free-to-play online multiplayer hero battle royale game developed by Respawn Entertainment and Electronic Arts. The game is cross platform and has two modes: Battle Royale and Arenas, where teams land on on an island in search for weapons and supplies before aiming to defeat all other opponents on the battlefield. Players can use various “legends” with different abilities to win. 
+
+```{r apexsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 33
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Spin off of critically acclaimed Titanfall and Titanfall 2, taking place in what the universe refers to as Apex Games
+- Futuristic combat and movement mechanics and realistic graphics
+- A free, surprise-release from a large publisher that gained popularity quickly
+- Fantastic world design with intricate details
+- The "ping system" makes co-op smoother and more enjoyable
+
+#### Statistics
+```{r apexstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Titanfall 2](https://www.ea.com/games/titanfall/titanfall-2)
+
+[Call of Duty: Warzone](https://www.callofduty.com/warzone)
+
+[Player Unknown's Battlegrounds](https://www.pubg.com/en-us/)
+
+## **Valorant**
+![](https://wp.stanforddaily.com/wp-content/uploads/2020/08/image-2.png)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Valorant is a free to play shooter game developed by Riot Games set in the near future. It has a team-based tactical shooter gameplay where players are initially assigned to support their five-person team by attacking or defending. Players get to participate in friendly competition as they explore the different weapons available as well as the fifteen different agents to choose from.
+
+```{r valorantsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 17
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Colorful and aesthetically pleasing visuals
+- Plenty of room for player improvement that keeps players engaged
+- Clear animations and effects 
+- Spectator mode is great for new players
+- Developer is also creator of one of the most popular battle arena games: League of Legends
+
+#### Statistics
+```{r valorantstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Counter-Strike: Global Offensive](https://blog.counter-strike.net/)
+
+[Fallout 76](https://fallout.bethesda.net/)
+
+# Simulation {.tabset .tabset-fade}
+
+## **Sims 4**
+![](https://media.contentapi.ea.com/content/dam/eacom/SIMS/brand-refresh-assets/images/2019/07/ts4-featured-image-base-refresh.png.adapt.crop191x100.1200w.png)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+ Sims 4 is arguably one of the biggest and most popular life simulation games released in 2014. It is the fourth major title in the Sims series developed by the Redwood Shores and published by Electronic Arts. Here, players can build buildings, create characters, and control their jobs, friends, skills and much more through Sims 4. The sandbox game allows players to live vicariously through their characters as they go day to day in their perfect little lives.
+
+```{r simssum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 21
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- A new addition to the classic, popular series, The Sims
+- Improved graphics and animations from its predecessors
+- Incredibly addictive gameplay with endless things to do
+- Comic mischief humor is very entertaining
+- Lots of customization options to really make the world feel like yours
+
+#### Statistics
+```{r simsstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Animal Crossing: New Horizons](https://www.animal-crossing.com/new-horizons/)
+
+[Tomodachi Life](https://www.nintendo.com/games/detail/tomodachi-life-3ds/)
+
+[Cities: Skylines](https://www.citiesskylines.com/)
+
+## **Animal Crossing: New Horizons**
+![](https://animalcrossingworld.com/wp-content/uploads/2020/01/animal-crossing-new-horizons-key-artwork-january-2020-large-logo.png)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Animal Crossing New Horizons offers a wonderful chance to explore and interact with a deserted island with your own avatar. You can build your own world in this cute comic-mischief filled universe and hang out with friends in the game. ACNH gives the player freedom to explore other islands and find potential tenants as you continue to build your island and reputation. It also gives insight on economic aspects and teaches players the value of money in a fun and easy way.
+
+```{r acnhsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 11
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- A beautiful addition to the Animal Crossing series; popularity spiked during Quarantine 2020
+- Incredibly addictive customization and gameplay that keeps you engaged
+- Daily in-game shop updates to encourage you to keep coming back to build your island
+- Adorable story and interactive mechanics with lovable NPC's
+- Huge community due to popularity makes it easy to trade needed items with real life players and hang out with friends in your world
+
+#### Statistics
+```{r acnhstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Stardew Valley](https://www.stardewvalley.net/)
+
+[Minecraft](https://www.minecraft.net/en-us/)
+
+[Animal Crossing: Pocket Camp](https://ac-pocketcamp.com/)
+
+## **Overcooked! 2**
+![](https://www.nintendo.com//content/dam/noa/en_US/games/switch/o/overcooked-2-switch/overcooked-2-switch-hero.jpg)
+
+### {.tabset .tabset-fade .tabset-pills}
+#### Summary
+Overcooked 2 is a lighthearted game where up to four players prepare food, cook, and deliver meals all under a time crunch. You can play with friends or against them to offer a challenge. Overcooked is a thrilling cooking game where the main enemy is time and your surroundings. The player must know how to navigate the kitchen to either maximize time with their partner, or be incredibly efficient on their own to beat the other player. 
+
+```{r overcookedsum, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rank = 10
+info <- data[rank, c(2,3,15)]
+consoles<- data[rank, c(4:7)]
+knitr::kable(info, caption = "Additional Info")
+knitr::kable(consoles, caption = "Consoles")
+```
+#### What makes this game popular?
+- Adorable, wholesome graphics and animations with a silly story
+- Exciting gameplay, especially as a couch co-op game with friends
+- Family friendly and a great party game for groups of people
+- Addictive gameplay 
+
+#### Statistics
+```{r overcookedstats, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+crit_labels=c("MetaCritic", "OpenCritic", "IGN", "Average Critic Rating")
+plot_ly(
+  x=c("Critic 1", "Critic 2", "Critic 3", "Average"),
+  y=c(data[rank,8], data[rank,9], data[rank,10], data[rank,11]), 
+  hovertext = crit_labels, type = "bar", marker = list(color=c("steelblue","steelblue","steelblue", "lightblue"))
+) %>% layout(xaxis=cr, yaxis = list(range=c(0,100), title="Rating %"))
+plot_ly(type = "pie", marker=list(colors=c("#EADBFF","#C1A1F0")),
+               labels=c("Twitch Streamers", "Average Twitch Viewers"), values=c(data[rank,12],data[rank,13]),
+               textinfo='label+value')
+```
+
+#### See Also
+[Overcooked! All You Can Eat](https://www.nintendo.com/games/detail/overcooked-all-you-can-eat-switch/)
+
+[Moving Out](https://store.steampowered.com/app/996770/Moving_Out/)
